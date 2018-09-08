@@ -26,17 +26,17 @@ vectorised_train_data = vectorizer.fit_transform(train_data)
 classifier = LinearSVC()
 classifier.fit(vectorised_train_data, train_labels)
 
-print("Training complete!")
+print("Training complete!") # to let user know that they can start typing
 
-user_input = input("Send me a message!\n")
-user_data = np.array([user_input])
-vectorised_user_data = vectorizer.transform(user_data)
+user_input = input("Send me a message!\n") # function to take user input
+user_data = np.array([user_input]) # needs to be an array so vectorizer can process
+vectorised_user_data = vectorizer.transform(user_data) # vectorizes the text according to training fit
 
-while(user_input != "quit"):
-	prediction = classifier.predict(vectorised_user_data)
+while(user_input != "quit"): # runs this until you type in "quit"
+	prediction = classifier.predict(vectorised_user_data) # calculates whether text is ham or spam
 	print(prediction)
-	user_input = input("Send me a message!\n")
-	user_data = np.array([user_input])
-	vectorised_user_data = vectorizer.transform(user_data)
+	user_input = input("Send me a message!\n") # asks for user input again!
+	user_data = np.array([user_input]) # repeat the user input processing sequence
+	vectorised_user_data = vectorizer.transform(user_data) # goes into next loop with vectorized data
 print("Bye!")
 
