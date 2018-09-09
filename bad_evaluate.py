@@ -7,7 +7,6 @@ from sklearn.svm import LinearSVC
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 
 def load_data(sheet):
